@@ -1,0 +1,118 @@
+h2 {
+  margin-bottom: 10px;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+#logo {
+  position: center;
+  top: 0px;
+  left: 0px;
+  width: 220px;
+  height: 220px;
+}
+
+#div01 {
+  top:0px;
+  left:0px;
+  height: 62vh;
+  width:96vw;
+  background-color: white;
+}
+
+#menu-box {
+  padding-inline: 20%;
+  display: flex;
+  flex-direction: row;
+  gap: 190px;
+}
+
+.addButtonContainer {
+  background-color: #043e96f6;
+  border: none;
+}
+.addButton {
+  padding-top:2.8px;
+  width: 15px;
+  height:15px;
+}
+.addButton:hover {
+  filter: drop-shadow(0 0 4px #043e96f6);
+}
+
+.appointmentListContainer{
+  position: center;
+  height:100vh;
+  background-color:#F3B500;
+  color:#052481;
+  border-radius: 10px;
+}
+
+#span-text {
+  white-space: pre;
+}
+
+.description{
+  word-spacing: 3px;
+}
+
+.completed {
+  background-color: #3275daf6;
+}
+.cancelled {
+  background-color: #f46050;
+}
+
+.appointment-list {
+  position: relative;
+  bottom: 0px;
+  padding: 0 16px;
+}
+
+.appointment {
+  background-color: #e4c464;
+  box-shadow: 0 0 10px rgba(5, 36, 129 , .8);
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.actionButtons {
+  padding-left: 10px;
+}
+
+.form {
+  padding: 0 10px;
+}
+
+.search {
+  padding-bottom: 10px;
+}
+
+.search-bar {
+  width: 370px;
+}
+
+.description-input::placeholder {
+  font-style: italic;
+  color: #bab5b5;
+}
+
+.place-input::placeholder {
+  font-style: italic;
+  color: #bab5b5;
+}
+
+.search-bar::placeholder {
+  font-style: italic;
+  color: #bab5b5;
+}
+
