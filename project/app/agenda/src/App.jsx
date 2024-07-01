@@ -48,6 +48,18 @@ function App() {
     setAppointments(newAppointments)
   }
 
+  const formatDateForsearch = (dateString) => {
+    const splittedDate = dateString.split("-")
+    const date = new Date(splittedDate[0], splittedDate[1] - 1, splittedDate[2]);
+    
+    const dia = String(date.getDate()).padStart(1, '0');
+    const mes = String(date.getMonth() + 1).padStart(2, '0');
+    const ano = date.getFullYear();
+
+    console.log(`${dia}/${mes}/${ano}`)
+    return `${dia}/${mes}/${ano}`
+  }
+
   return (
     <div>
 
@@ -62,7 +74,8 @@ function App() {
         <AppointmentSearch search={search} setSearch={setSearch}/>
 
         <div className="appointment-list">
-          {appointments.filter((appointment) => appointment.date.includes(search) || 
+          {appointments.filter((appointment) => 
+          formatDateForsearch(appointment.date).includes(search) ||
           appointment.description.toLowerCase().includes(search.toLowerCase()) || 
           appointment.place.toLowerCase().includes(search.toLowerCase()) || 
           appointment.category.toLowerCase().includes(search.toLowerCase())).map((appointment) => (

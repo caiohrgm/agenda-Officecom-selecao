@@ -22,6 +22,8 @@ const Appointment = ({appointment, removeAppointment, completeAppointment}) => {
     const mes = String(date.getMonth() + 1).padStart(2, '0');
     const ano = date.getFullYear();
 
+    // console.log(`${dia}/${mes}/${ano}`)
+
     return `${dia}/${mes}/${ano}`
   }
 
@@ -31,7 +33,7 @@ const Appointment = ({appointment, removeAppointment, completeAppointment}) => {
         <div className="content">
             <span id="span-text" className="date">{formatDate(appointment.date)}</span> 
             <span id="span-text" className="description"> | {appointment.description}</span> 
-            <span id="span-text" className="place"> em {appointment.place}</span>
+            <span id="span-text" className="place"> | {appointment.place}</span>
             <span id="span-text" className="category"> | ({appointment.category})</span>
         </div>
 
