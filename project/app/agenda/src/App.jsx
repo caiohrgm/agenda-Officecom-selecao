@@ -8,6 +8,7 @@ import AppointmentSearch from "./components/AppointmentSearch";
 function App() {
   const [search, setSearch] = useState("")
   const [appointments, setAppointments] = useState([])
+  const [sort, setSort] = useState("Asc")
 
   const addAppointment = (date, description, place, category) => {
     const newAppointments = [...appointments, {
@@ -73,12 +74,14 @@ function App() {
 
         <AppointmentSearch search={search} setSearch={setSearch}/>
 
+
+
         <div className="appointment-list">
-          {appointments.filter((appointment) => 
-          formatDateForsearch(appointment.date).includes(search) ||
-          appointment.description.toLowerCase().includes(search.toLowerCase()) || 
-          appointment.place.toLowerCase().includes(search.toLowerCase()) || 
-          appointment.category.toLowerCase().includes(search.toLowerCase())).map((appointment) => (
+          {appointments
+          .filter((appointment) => formatDateForsearch(appointment.date).includes(search) || appointment.description.toLowerCase().includes(search.toLowerCase()) || 
+          appointment.place.toLowerCase().includes(search.toLowerCase()) || appointment.category.toLowerCase().includes(search.toLowerCase()))
+          .sort((elm1, elm2) => sort === "Asc" ? elm1.date.localeCompare(elm2.date) : elm2.date.localeCompare(elm1.date))
+          .map((appointment) => (
             <Appointment key={appointment.id} appointment={appointment} removeAppointment={removeAppointment} completeAppointment={completeAppointment} />
           ))}
         </div>
