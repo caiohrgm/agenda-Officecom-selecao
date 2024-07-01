@@ -1,7 +1,0 @@
-Requirements:
-
-- Create, Update, Delete appointments:
-
-- View Calendar;
-
-- 

@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'this-cafe';
+  src: url('../src/assets/thisCafeFont.ttf');
+}
+
 h2 {
   margin-bottom: 10px;
 }
@@ -32,6 +37,22 @@ h2 {
   gap: 190px;
 }
 
+.agenda-title {
+  font-size: 40px;
+  font-family: 'this-cafe';
+  color: #F3B500; 
+  background-color: #043e96f6;                                         
+}
+
+.new-event-title {
+  font-family: 'this-cafe';
+  font-size: 25px;
+  color: #F3B500; 
+  background-color: #043e96f6;
+  justify-content: center; 
+  align-items: center;  
+}
+
 .addButtonContainer {
   background-color: #043e96f6;
   border: none;
@@ -47,10 +68,10 @@ h2 {
 
 .appointmentListContainer{
   position: center;
-  height:100vh;
   background-color:#F3B500;
   color:#052481;
   border-radius: 10px;
+  padding-bottom: 15px;
 }
 
 #span-text {

@@ -1,14 +1,21 @@
 const express = require('express')
 const appointmentApi = require('./api/appointment')
 const bodyParser = require('body-parser')
+const cors = require('cors')
 const app = express()
+
+const port = 3333
 
 app.use(bodyParser.json())  
 app.use(bodyParser.urlencoded({extended: true}))
 
+app.use(cors({
+    origin:'http://localhost:5173'
+}))
+
 app.post("/appointment", appointmentApi.create)
-app.get("/appointment/date", appointmentApi.getByDate)
-app.get("/appointment/category", appointmentApi.getByCategory)
 app.delete("/appointment/:id", appointmentApi.remove)
 
-app.listen(3333)
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`)
+})
