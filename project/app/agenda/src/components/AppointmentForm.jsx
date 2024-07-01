@@ -23,27 +23,33 @@ const AppointmentForm = ({addAppointment}) => {
         e.preventDefault()
 
         if (!date || !description || !place || !category) return;
-
-        const response = await fetch('http://localhost:3333/appointment', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ date, description, place, category })
-        });
-
-        const data = await response.json()
+        addAppointment(date, description, place, category)
+        setDate("")
+        setDescription("")
+        setPlace("")
+        setCategory("")
         
-        if (response.ok) {
-            addAppointment(data.id, date, description, place, category)
-            setDate("")
-            setDescription("")
-            setPlace("")
-            setCategory("")
-            alert('Você tem um novo compromisso!');
-        } else {
-            alert('Houve um erro ao cadastrar um compromisso.');
-        }
+        /*Versão utilizando Banco de Dados:*/
+        // const response = await fetch('http://localhost:3333/appointment', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify({ date, description, place, category })
+        // });
+
+        // const data = await response.json()
+        
+        // if (response.ok) {
+        //     addAppointment(data.id, date, description, place, category)
+        //     setDate("")
+        //     setDescription("")
+        //     setPlace("")
+        //     setCategory("")
+        //     alert('Você tem um novo compromisso!');
+        // } else {
+        //     alert('Houve um erro ao cadastrar um compromisso.');
+        // }
     }
     
   return (

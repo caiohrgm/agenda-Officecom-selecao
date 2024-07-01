@@ -63,7 +63,7 @@ h2 {
   height:15px;
 }
 .addButton:hover {
-  filter: drop-shadow(0 0 4px #043e96f6);
+  filter: drop-shadow(0 0 4px #fffffff6);
 }
 
 .appointmentListContainer{

@@ -9,9 +9,9 @@ function App() {
   const [search, setSearch] = useState("")
   const [appointments, setAppointments] = useState([])
 
-  const addAppointment = (id, date, description, place, category) => {
+  const addAppointment = (date, description, place, category) => {
     const newAppointments = [...appointments, {
-      id,
+      id: Math.floor(Math.random() * 10000),
       date,
       description,
       place,
@@ -23,19 +23,23 @@ function App() {
   }
 
   const removeAppointment = async (id) => {
-  
-    const response = await fetch(`http://localhost:3333/appointment/${id}`, {
-      method:'DELETE'
-    })
-
-    if (response.ok) {
-      const newAppointments = [...appointments]
+    const newAppointments = [...appointments]
       const filteredAppointments = newAppointments.filter(appointment => appointment.id !== id ? appointment : null)
       setAppointments(filteredAppointments)
-      alert('Compromisso deletado com sucesso.')
-    } else {
-      alert('Erro ao deletar o compromisso.')
-    }
+  
+    /*Versão utilizando Banco de Dados:*/    
+    // const response = await fetch(`http://localhost:3333/appointment/${id}`, {
+    //   method:'DELETE'
+    // })
+
+    // if (response.ok) {
+    //   const newAppointments = [...appointments]
+    //   const filteredAppointments = newAppointments.filter(appointment => appointment.id !== id ? appointment : null)
+    //   setAppointments(filteredAppointments)
+    //   alert('Compromisso deletado com sucesso.')
+    // } else {
+    //   alert('Erro ao deletar o compromisso.')
+    // }
   }
 
   const completeAppointment = (id) => {
