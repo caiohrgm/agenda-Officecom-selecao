@@ -8,6 +8,7 @@ import AppointmentSearch from "./components/AppointmentSearch";
 function App() {
   const [search, setSearch] = useState("")
   const [appointments, setAppointments] = useState([])
+  // eslint-disable-next-line no-unused-vars
   const [sort, setSort] = useState("Asc")
 
   const addAppointment = (date, description, place, category) => {
